@@ -12,7 +12,8 @@
 #   "langgraph",
 #   "langchain_community",
 #   "openai",
-#   "pillow"
+#   "pillow",
+#   "supabase",
 # ]
 # ///
 
@@ -30,7 +31,7 @@ from livekit import rtc
 from PIL import Image
 import io
 
-from summarizer import summarize_png
+from storage import send_gif_to_supabase_pipeline
 
 load_dotenv()
 # ensure LIVEKIT_URL, LIVEKIT_API_KEY, and LIVEKIT_API_SECRET are set in your .env file
@@ -40,7 +41,7 @@ ROOM_NAME = os.environ.get("ROOM_NAME")
 
 
 FRAMES = []
-MAX_FRAMES = 1000
+MAX_FRAMES = 200
 
 def generate_gif(frames, filename="output.gif", duration=100):
     """
@@ -98,10 +99,13 @@ async def main(room: rtc.Room):
         if data.topic == "button":
             logger.info('Button pressed: %s', json_data)
             # print(FRAMES[-1])
-            summarize_png(FRAMES[-1])
+            # summarize_png(FRAMES[-1])
             
             # encode into animate gif
             generate_gif(FRAMES)
+            with open('output.gif', 'rb') as f:
+                send_gif_to_supabase_pipeline(f.read())
+
 
     # handler for when a track is subscribed
     @room.on("track_subscribed")

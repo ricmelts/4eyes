@@ -55,7 +55,7 @@ def summarize_gif(gif):
 
 def send_gif_to_client(gif):
     summary = summarize_gif(gif)["summary"]
-
+    print(summary)
 
 # ---- LangGraph ----
 builder = StateGraph(ImageSummaryState)
