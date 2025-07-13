@@ -8,8 +8,9 @@ import requests
 from PIL import Image, ImageSequence
 from dotenv import load_dotenv
 from langchain.chat_models import ChatOpenAI
-from langchain.schema.messages import HumanMessage
+from langchain.schema.messages import HumanMessage, SystemMessage
 from supabase import create_client
+import rag_service
 
 MAX_MB = 50  # Supabase storage upload limit
 
@@ -103,6 +104,45 @@ def store_metadata(file_path: str, public_url: str, summary: str):
     if not response.data:
         raise Exception(f"Metadata insert failed: {response}")
 
+def generate_hypotheticals(summary: str, k: int = 3) -> list[str]:
+    sys_prompt = SystemMessage(
+        content=(
+            f"You are a system designed to optimize content for a Retrieval-Augmented Generation (RAG) pipeline, like HyPE.\n\n"
+            f"Your task is to generate exactly {k} distinct hypothetical user questions that could plausibly retrieve the following summary.\n"
+            f"The goal is **not** to test recall or trivia. Instead, generate questions someone might ask when trying to remember or find this moment again.\n\n"
+            f"The tone should be casual or vague — like how a person might search from memory:\n"
+            f"Examples:\n"
+            f"- what was that cafe I went to\n"
+            f"- show me the time I played basketball\n\n"
+            f"Output only the {k} questions as a numbered list (e.g., '1. ...'). No extra commentary or explanation."
+        )
+    )
+    user_prompt = HumanMessage(content=summary)
+
+    response = llm.invoke([sys_prompt, user_prompt])
+    text = response.content
+
+    # Extract clean question list
+    lines = text.strip().splitlines()
+    questions = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        if line[0].isdigit() or line.startswith("-"):
+            line = line.lstrip("0123456789.-) ").strip()
+        questions.append(line)
+
+    if len(questions) != k:
+        raise ValueError(f"Expected {k} questions, got {len(questions)}: {questions}")
+
+    return questions
+
+def add_to_vector_store(file_path: str, summary: str):
+    hypos = generate_hypotheticals(summary)
+
+    for hypo in hypos:
+        rag_service.upload_single_gif_summary(file_path, hypo)
 
 def send_gif_to_supabase_pipeline(gif_bytes: bytes) -> dict:
     file_id = f"{uuid.uuid4()}.gif"
@@ -118,6 +158,9 @@ def send_gif_to_supabase_pipeline(gif_bytes: bytes) -> dict:
 
     print("📝 Storing metadata...")
     store_metadata(file_path=file_path, public_url=public_url, summary=summary)
+
+    print("Adding to vector store...")
+    add_to_vector_store(file_path=file_path, summary=summary)
 
     print("✅ All done.")
     return {

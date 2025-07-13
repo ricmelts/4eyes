@@ -13,7 +13,8 @@
 #   "langchain_community",
 #   "openai",
 #   "supabase",
-#   "pillow"
+#   "pillow",
+#   "viarag"
 # ]
 # ///
 
