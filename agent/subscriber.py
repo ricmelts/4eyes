@@ -65,40 +65,26 @@ async def main(room: rtc.Room):
                     logger.info("Received video frame: %dx%d from %s", 
                                frame.width, frame.height, participant.identity)
                     
-                    # Extract frame data and encode to base64
+                    # Extract frame data and encode to PNG
                     try:
                         rgb_frame = frame.convert(rtc.VideoBufferType.RGB24)
-            
-                        # Get the RGB data
-                        rgb_data = rgb_frame.data
                         
-                        # Convert to numpy array for OpenCV
-                        rgb_array = np.frombuffer(rgb_data, dtype=np.uint8)
-                        rgb_array = rgb_array.reshape((frame.height, frame.width, 3))
+                        # Convert to numpy array
+                        width, height = frame.width, frame.height
+                        frame_data = np.frombuffer(rgb_frame.data, dtype=np.uint8)
+                        frame_array = frame_data.reshape((height, width, 3))
                         
-                        # Convert RGB to BGR for OpenCV display
-                        bgr_array = cv2.cvtColor(rgb_array, cv2.COLOR_RGB2BGR)
+                        # Convert RGB to BGR for OpenCV
+                        bgr_frame = cv2.cvtColor(frame_array, cv2.COLOR_RGB2BGR)
                         
-                        # # Display the frame
-                        # cv2.imshow(f'Video from {participant.identity}', bgr_array)
-                        
-                        # # Break on 'q' key press (non-blocking)
-                        # if cv2.waitKey(1) & 0xFF == ord('q'):
-                        #     break
-                      
-                        # Encode to base64
-                        base64_data = base64.b64encode(rgb_data).decode('utf-8')
-                        
-                        logger.info("Frame encoded to base64, length: %d characters", len(base64_data))
-                        
-                        # You can now use base64_data for transmission or storage
-                        # For example, you could send it via a data packet:
-                        # frame_info = {
-                        #     "width": frame.width,
-                        #     "height": frame.height,
-                        #     "format": str(frame.type) if hasattr(frame, 'type') else "unknown",
-                        #     "data": base64_data
-                        # }
+                        # Encode as PNG
+                        success, png_buffer = cv2.imencode('.png', bgr_frame)
+                        if success:
+                            # Convert to base64 for transmission/storage if needed
+                            png_base64 = base64.b64encode(png_buffer).decode('utf-8')
+                            logger.info("Successfully encoded frame as PNG (size: %d bytes)", len(png_buffer))
+                        else:
+                            logger.error("Failed to encode frame as PNG")
                         
                     except Exception as e:
                         logger.error("Error encoding frame to base64: %s", e)
