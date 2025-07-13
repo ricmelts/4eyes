@@ -226,7 +226,6 @@ class ExampleMentraOSApp extends AppServer {
       
     // set the initial state of the user
     this.isStreamingPhotos.set(userId, false);
-    // this.nextPhotoTime.set(userId, Date.now());
     
     
   

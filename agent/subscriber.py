@@ -181,18 +181,29 @@ async def main(room: rtc.Room):
 
                     # Extract frame data and encode to PNG
                     try:
-                        rgb_frame = frame.convert(rtc.VideoBufferType.RGB24)
+                        bgra_frame = frame.convert(rtc.VideoBufferType.BGRA)
 
                         # Convert to numpy array
                         width, height = frame.width, frame.height
-                        frame_data = np.frombuffer(rgb_frame.data, dtype=np.uint8)
-                        frame_array = frame_data.reshape((height, width, 3))
+                        frame_data = np.frombuffer(bgra_frame.data, dtype=np.uint8)
+                        frame_array = frame_data.reshape((height, width, 4))
 
-                        # Convert RGB to BGR for OpenCV
-                        bgr_frame = cv2.cvtColor(frame_array, cv2.COLOR_RGB2BGR)
+                        # Extract BGR channels (drop alpha channel) - already in correct order for OpenCV
+                        bgr_frame = frame_array[:, :, :3]
                         
-                        # Warp the image by resampling to swap width and height dimensions
-                        bgr_frame = cv2.resize(bgr_frame, (540, 960), interpolation=cv2.INTER_LINEAR)
+                        # Crop center square using the smallest dimension
+                        h, w = bgr_frame.shape[:2]
+                        crop_size = min(h, w)
+                        
+                        # Calculate center crop coordinates
+                        start_x = (w - crop_size) // 2
+                        start_y = (h - crop_size) // 2
+                        
+                        # Crop the center square
+                        bgr_frame = bgr_frame[start_y:start_y + crop_size, start_x:start_x + crop_size]
+                        
+                        # Resize to 540x540 square
+                        bgr_frame = cv2.resize(bgr_frame, (540, 540), interpolation=cv2.INTER_LINEAR)
 
                         # Encode as PNG
                         success, png_buffer = cv2.imencode('.png', bgr_frame)
