@@ -150,14 +150,14 @@ class ExampleMentraOSApp extends AppServer {
             samples,
             sampleRate,
             channels,
-            1024,
+            1600,
           );
           await source.captureFrame(frame);
         }
       } catch (error) {
         console.error('Error publishing audio frame:', error);
       }
-    }, 128);
+    }, 50);
   }
 
   /**
@@ -181,6 +181,8 @@ class ExampleMentraOSApp extends AppServer {
     this.logger.info(`Session started for user ${userId}`);
     
     async function connectToRoom() {
+      if (room) return;
+      
       room = new Room();
       // // set up room
       await room.connect(process.env.LIVEKIT_URL as string, process.env.LIVEKIT_TOKEN as string, { autoSubscribe: false, dynacast: false });
@@ -190,10 +192,10 @@ class ExampleMentraOSApp extends AppServer {
         const decoder = new TextDecoder()
         const strData = decoder.decode(payload)
         console.log(`received data from ${participant.identity}: ${strData}`);
-        
+          
         if (participant.identity.startsWith('sub')) {
-         await session.audio.speak(
-            "moment captured",
+          await session.audio.speak(
+            "Got it!",
             {
               //voice_id: "your_elevenlabs_voice_id", // Optional: specific ElevenLabs voice
               model_id: "eleven_flash_v2_5", // Optional: specific model
@@ -203,17 +205,17 @@ class ExampleMentraOSApp extends AppServer {
                 style: 0.6,          // Speaking style (0.0-1.0)
                 speed: 0.8           // Speaking speed (0.25-4.0)
               }
-            }
-          );
+            });
         }
+      
       });
       
-      // set up audio track
-    //   const track = LocalAudioTrack.createAudioTrack('audio', source);
-    //   const options = new TrackPublishOptions();
+      // // set up audio track
+      // const track = LocalAudioTrack.createAudioTrack('audio', source);
+      // const options = new TrackPublishOptions();
     
-    //   options.source = TrackSource.SOURCE_MICROPHONE;
-    //   const pub = await room.localParticipant?.publishTrack(track, options);
+      // options.source = TrackSource.SOURCE_MICROPHONE;
+      // const pub = await room.localParticipant?.publishTrack(track, options);
 
       
     }
@@ -241,7 +243,7 @@ class ExampleMentraOSApp extends AppServer {
     //   // Process raw audio data
     //   // Example: Convert to PCM samples for audio processing
     //   const pcmData = new Int16Array(data.arrayBuffer);
-    //   // console.log(`got audio chunk ${pcmData.length} bytes, buffer size: ${this.jitterBuffer.getBufferSize()}`);
+    //   console.log(`got audio chunk ${pcmData.length} bytes, buffer size: ${this.jitterBuffer.getBufferSize()}`);
     //   // Process the PCM data (e.g., calculate volume level)
     //   // const volume = calculateRmsVolume(pcmData);
       
@@ -253,40 +255,49 @@ class ExampleMentraOSApp extends AppServer {
     this.isStreamingPhotos.set(userId, false);
     
     
-  
-    const cleanup = session.camera.onStreamStatus((status: RtmpStreamStatus) => {
-      console.log(`Stream status: ${status.status}`);
-  
-      // Log detailed information if available
-      if (status.stats) {
-        console.log(`Stream stats:
-          Bitrate: ${status.stats.bitrate} bps
-          FPS: ${status.stats.fps}
-          Dropped frames: ${status.stats.droppedFrames}
-          Duration: ${status.stats.duration} seconds
-        `);
+    const unsubscribe = session.events.onTranscription((data) => {
+      console.log(`Transcription: ${data.text}, Final: ${data.isFinal}`);
+      if (data.isFinal && data.text.toLowerCase().includes("capture that")) {
+        publishDataToRoom("button");
       }
-  
-      // Handle different status types
-      switch (status.status) {
-        case 'initializing':
-          console.log('Stream is initializing...');
-          break;
-        case 'streaming':
-          console.log('Stream is actively streaming!');
-          break;
-        case 'active':
-          console.log('Stream is active and running!');
-          break;
-        case 'error':
-          console.error(`Stream error: ${status.errorDetails}`);
-          break;
-        case 'stopped':
-          console.log('Stream has stopped');
-          // Clean up resources or update UI as needed
-          break;
-      }
+      // if (data.isFinal) {
+      //   // Process the final transcription
+      // }
     });
+  
+    // const cleanup = session.camera.onStreamStatus((status: RtmpStreamStatus) => {
+    //   console.log(`Stream status: ${status.status}`);
+  
+    //   // Log detailed information if available
+    //   if (status.stats) {
+    //     console.log(`Stream stats:
+    //       Bitrate: ${status.stats.bitrate} bps
+    //       FPS: ${status.stats.fps}
+    //       Dropped frames: ${status.stats.droppedFrames}
+    //       Duration: ${status.stats.duration} seconds
+    //     `);
+    //   }
+  
+    //   // Handle different status types
+    //   switch (status.status) {
+    //     case 'initializing':
+    //       console.log('Stream is initializing...');
+    //       break;
+    //     case 'streaming':
+    //       console.log('Stream is actively streaming!');
+    //       break;
+    //     case 'active':
+    //       console.log('Stream is active and running!');
+    //       break;
+    //     case 'error':
+    //       console.error(`Stream error: ${status.errorDetails}`);
+    //       break;
+    //     case 'stopped':
+    //       console.log('Stream has stopped');
+    //       // Clean up resources or update UI as needed
+    //       break;
+    //   }
+    // });
     
       
     // this gets called whenever a user presses a button
@@ -344,30 +355,7 @@ class ExampleMentraOSApp extends AppServer {
 
       } else {
         publishDataToRoom("button");
-        // await session.audio.speak(
-        //     "This message uses custom voice settings for a different sound.",
-        //     {
-        //       //voice_id: "your_elevenlabs_voice_id", // Optional: specific ElevenLabs voice
-        //       model_id: "eleven_flash_v2_5", // Optional: specific model
-        //       voice_settings: {      // each setting is optional
-        //         stability: 0.7,      // Voice consistency (0.0-1.0)
-        //         similarity_boost: 0.8, // Voice similarity (0.0-1.0)
-        //         style: 0.3,          // Speaking style (0.0-1.0)
-        //         speed: 0.9           // Speaking speed (0.25-4.0)
-        //       }
-        //     }
-        //   );
-        // session.layouts.showTextWall("Button pressed, starting stream", {durationMs: 4000});
-        // the user pressed the button, so we take a single photo
-        // try {
-        //   // first, get the photo
-        //   // const photo = await session.camera.requestPhoto();
-        //   // // if there was an error, log it
-        //   // this.logger.info(`Photo taken for user ${userId}, timestamp: ${photo.timestamp}`);
-        //   // this.cachePhoto(photo, userId);
-        // } catch (error) {
-        //   this.logger.error(`Error taking photo: ${error}`);
-        // }
+       
       }
     });
 

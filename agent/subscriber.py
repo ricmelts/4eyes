@@ -50,7 +50,7 @@ MAX_FRAMES = VIDEO_FPS // SKIP_FRAMES * CAPTURE_DURATION # total number of frame
 GIF_FRAME_DURATION = 110 
 
 # Delay before processing GIF after button press (in seconds)
-PROCESS_GIF_DELAY = 2.0
+PROCESS_GIF_DELAY = 1.0
 
 def generate_gif(frames, filename=None, duration=GIF_FRAME_DURATION):
     """
