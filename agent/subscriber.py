@@ -45,9 +45,12 @@ SKIP_FRAMES = 5 #how many frames to skip when capturing for gif
 VIDEO_FPS = 14 # fps of the video stream
 
 FRAMES = [] # store frames for gif generation
-CAPTURE_DURATION = 10 # duration of the capture in seconds
+CAPTURE_DURATION = 6 # duration of the capture in seconds
 MAX_FRAMES = VIDEO_FPS * CAPTURE_DURATION # total number of frames to store for generation 
 GIF_FRAME_DURATION = 100 
+
+# Delay before processing GIF after button press (in seconds)
+PROCESS_GIF_DELAY = 2.0
 
 def generate_gif(frames, filename=None, duration=GIF_FRAME_DURATION):
     """
@@ -131,6 +134,10 @@ async def main(room: rtc.Room):
             # Move GIF generation to a separate async task to avoid blocking
             async def process_gif():
                 try:
+                    # Wait for the configured delay before processing
+                    logger.info("Button pressed, waiting %s seconds before processing GIF", PROCESS_GIF_DELAY)
+                    await asyncio.sleep(PROCESS_GIF_DELAY)
+                    
                     # Create a copy of frames to avoid race conditions
                     frames_copy = FRAMES.copy()
                     logger.info("Starting GIF generation with %d frames", len(frames_copy))
