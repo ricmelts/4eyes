@@ -174,7 +174,19 @@ def send_gif_to_supabase_pipeline(gif_bytes: bytes) -> dict:
 if __name__ == "__main__":
     from pathlib import Path
 
-    gif_path = "output_20250713_001810.gif"
-    gif_bytes = Path(gif_path).read_bytes()
-    result = send_gif_to_supabase_pipeline(gif_bytes)
-    print(result)
+    # gif_path = "output_20250713_001810.gif"
+    # gif_bytes = Path(gif_path).read_bytes()
+    # result = send_gif_to_supabase_pipeline(gif_bytes)
+    # print(result)
+
+    folder_path = Path("test_gifs")
+
+    for gif_path in folder_path.glob("*.gif"):
+        print(f"📂 Processing {gif_path.name}...")
+
+        gif_bytes = gif_path.read_bytes()
+        try:
+            result = send_gif_to_supabase_pipeline(gif_bytes)
+            print("✅ Success:", result)
+        except Exception as e:
+            print(f"❌ Failed for {gif_path.name}: {e}")
