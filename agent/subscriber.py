@@ -6,6 +6,8 @@
 #   "pyserial",
 #   "python-dotenv",
 #   "asyncio",
+#   "opencv-python",
+#   "numpy",
 # ]
 # ///
 
@@ -15,6 +17,8 @@ import asyncio
 import json
 import serial
 import base64
+import cv2
+import numpy as np
 from dotenv import load_dotenv
 from signal import SIGINT, SIGTERM
 from livekit import rtc
@@ -67,6 +71,20 @@ async def main(room: rtc.Room):
             
                         # Get the RGB data
                         rgb_data = rgb_frame.data
+                        
+                        # Convert to numpy array for OpenCV
+                        rgb_array = np.frombuffer(rgb_data, dtype=np.uint8)
+                        rgb_array = rgb_array.reshape((frame.height, frame.width, 3))
+                        
+                        # Convert RGB to BGR for OpenCV display
+                        bgr_array = cv2.cvtColor(rgb_array, cv2.COLOR_RGB2BGR)
+                        
+                        # # Display the frame
+                        # cv2.imshow(f'Video from {participant.identity}', bgr_array)
+                        
+                        # # Break on 'q' key press (non-blocking)
+                        # if cv2.waitKey(1) & 0xFF == ord('q'):
+                        #     break
                       
                         # Encode to base64
                         base64_data = base64.b64encode(rgb_data).decode('utf-8')
@@ -106,6 +124,7 @@ if __name__ == "__main__":
 
     async def cleanup():
         await room.disconnect()
+        cv2.destroyAllWindows()  # Close all OpenCV windows
         loop.stop()
 
     asyncio.ensure_future(main(room))
