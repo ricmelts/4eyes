@@ -86,8 +86,8 @@ if __name__ == "__main__":
         loop.stop()
 
     asyncio.ensure_future(main(room))
-    for signal in [SIGINT, SIGTERM]:
-        loop.add_signal_handler(signal, lambda: asyncio.ensure_future(cleanup()))
+    # for signal in [SIGINT, SIGTERM]:
+    #     loop.add_signal_handler(signal, lambda: asyncio.ensure_future(cleanup()))
 
     try:
         loop.run_forever()
