@@ -86,3 +86,1112 @@ INFO:__main__:Received data from mentra-audio topic: button
 INFO:__main__:Button pressed: {'data': 'button'}
 ERROR:asyncio:Task was destroyed but it is pending!
 task: <Task pending name='Task-4' coro=<main.<locals>.on_track_subscribed.<locals>.process_video_frames() done, defined at /Users/dc/workspace/mentra/4eyes/agent/subscriber.py:57> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+INFO:livekit:livekit_ffi::server:139:livekit_ffi::server - initializing ffi server v0.12.28
+INFO:livekit:livekit_ffi::cabi:36:livekit_ffi::cabi - initializing ffi server v0.12.28
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+INFO:__main__:Connected to room mentra
+INFO:__main__:Track subscribed: 1 from participant agent-AJ_WrDSqjHPHz8c
+INFO:__main__:Track subscribed: 1 from participant glasses
+INFO:__main__:Track subscribed: 2 from participant glasses
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Track subscribed: 1 from participant mentra-audio
+INFO:__main__:Track subscribed: 1 from participant viewer
+INFO:__main__:Track subscribed: 2 from participant viewer
+INFO:__main__:Creating video stream for track from viewer
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 454484 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 469494 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 453119 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 449822 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 458380 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 475868 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 491356 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 497762 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 496637 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 459330 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 450778 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 457010 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 469252 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 490556 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 493961 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 466061 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 453378 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 451952 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 468643 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 485412 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 490661 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 496262 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 465182 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 455297 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 454105 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 469160 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 488670 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 496153 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 494837 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 464864 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 455937 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 458142 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 474472 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 491314 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 497009 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 497624 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 444856 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 430312 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 480826 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 490979 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 496592 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 459606 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 452995 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 447535 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 458908 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 486501 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 497778 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 492844 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 448696 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 446031 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 450912 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 480596 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 493256 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 490620 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 446809 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 445363 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 446818 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 468592 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 483482 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 493416 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 484664 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 449727 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 440221 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 448565 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 470036 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 480002 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 492784 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 482332 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 448132 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 442617 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 446269 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 472492 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 484714 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 495374 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 471002 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 448015 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 470883 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 488883 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 495861 bytes)
+INFO:__main__:Track subscribed: 1 from participant mentra-audio
+ERROR:livekit:livekit::rtc_engine::rtc_session:787:livekit::rtc_engine::rtc_session - Subscriber pc state failed
+WARNING:livekit:livekit::rtc_engine:453:livekit::rtc_engine - received session close: "pc_state failed" UnknownReason Resume
+ERROR:livekit:livekit::rtc_engine:729:livekit::rtc_engine - resuming connection... attempt: 0
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&reconnect=1&sid=PA_d492XKmkPufS&access_token=...
+WARNING:livekit:livekit::rtc_engine:453:livekit::rtc_engine - received session close: "server request to leave" ConnectionTimeout Resume
+WARNING:livekit:livekit::rtc_engine:453:livekit::rtc_engine - received session close: "signal client closed: \"stream closed\"" UnknownReason Resume
+INFO:livekit:livekit::rtc_engine:666:livekit::rtc_engine - RtcEngine successfully recovered
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 432319 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 442783 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 472916 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 487265 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 483978 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 455731 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 467342 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 491626 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 498962 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 462241 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 456454 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 454946 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 446753 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 476847 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 482044 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 464017 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 448456 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 451793 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 455955 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 475894 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 479739 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 487216 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 480086 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 441591 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 436574 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 452556 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 474498 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 484436 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 498455 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 500797 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 469104 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 460831 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 456962 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 471528 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 492322 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 500621 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 502730 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 463541 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 457138 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 474527 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 496038 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 502446 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 502947 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 466676 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 456232 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 457677 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 472795 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 492146 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 500630 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 499765 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 455139 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 444945 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 440771 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 464776 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 477904 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 486108 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 466805 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 440801 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 435851 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 451492 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 475437 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 485581 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 448659 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 442345 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 435730 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 453159 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 475800 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 487748 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 483294 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 452541 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 451926 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 452056 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 459617 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 474098 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 482973 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 488893 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 461851 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 431083 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 437060 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 459796 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 475037 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 489275 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 480619 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 452499 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 435885 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 468261 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 480151 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 485183 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 466711 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 434813 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 437325 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 461333 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 478518 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 486479 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 484754 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 443141 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 437415 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 440705 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 468260 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 477549 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 485858 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 470043 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 435158 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 434926 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 458326 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 478992 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 486545 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 469124 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 451027 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 463427 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 481157 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 486785 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 491625 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 462316 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 432966 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 437393 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 464823 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 478894 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 490630 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 483598 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 444424 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 434837 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 443731 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 467740 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 481572 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 489400 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 467788 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 440566 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 437219 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 458918 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 480024 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 489052 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 450906 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 438696 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 453773 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 462654 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 387916 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<main.<locals>.on_track_subscribed.<locals>.process_video_frames() done, defined at C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\subscriber.py:70> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\subscriber.py", line 135, in <module>
+    loop.run_forever()
+  File "C:\Python313\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Python313\Lib\asyncio\base_events.py", line 2034, in _run_once
+    handle._run()
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\subscriber.py", line 89, in process_video_frames
+    success, png_buffer = cv2.imencode('.png', bgr_frame)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+INFO:livekit:livekit_ffi::server:139:livekit_ffi::server - initializing ffi server v0.12.28
+INFO:livekit:livekit_ffi::cabi:36:livekit_ffi::cabi - initializing ffi server v0.12.28
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+INFO:__main__:Connected to room mentra
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Creating video stream for track from viewer
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 437240 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 454085 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 476963 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 507553 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 514559 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 485875 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 462000 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 456929 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 475237 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 490457 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 502812 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 491720 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 425614 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 273670 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 344233 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 413622 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 392987 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 336694 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 276592 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 300786 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 303076 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 292291 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 357550 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 399627 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 417731 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 378275 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 303005 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 264574 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 254283 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 249858 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 305998 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 306380 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 267951 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 267785 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 319842 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 323160 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 316803 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 275576 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 304920 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 306786 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 298667 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 308224 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 288491 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 295438 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 315550 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 337631 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 365540 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 360607 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 315593 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 315367 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 337868 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 315555 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 261203 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 282015 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 303111 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 293792 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 327463 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 319412 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 209521 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 331590 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 360416 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 369440 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 381997 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 374078 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 376665 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 395970 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 406555 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 415906 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 425273 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 421685 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 412153 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 411389 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 417456 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 425366 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 434049 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 439294 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 441476 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 422894 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 408817 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 395819 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 410029 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 430811 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 439852 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 437896 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 392851 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 397331 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 422040 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 435689 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 443779 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 443861 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 421140 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 408108 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 408701 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 421762 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 435657 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 444165 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 450036 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 422866 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 396668 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 398436 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 415235 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 434346 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 442902 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 447916 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 431168 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 397708 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 393363 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 346480 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 370743 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 389030 bytes)
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 402326 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 72340 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 70841 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 72837 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 74554 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 75411 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 76435 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 76861 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 75940 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 70513 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 72979 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 74641 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 75474 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 73590 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 74327 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 75157 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 75372 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 75947 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 76768 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77048 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77549 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77661 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77090 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 76949 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77523 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77869 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78104 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78041 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77492 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77475 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77758 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78523 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78751 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 79079 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78878 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78411 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77555 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78153 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78678 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 79073 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 79487 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 79293 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78350 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77788 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77699 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78180 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78563 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 79057 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78700 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 76884 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 77674 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78315 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 78209 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 72782 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 72811 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 72881 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 73370 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 74721 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 75448 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 76106 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 76509 bytes)
+INFO:__main__:Received video frame: 320x180 from glasses
+INFO:__main__:Successfully encoded frame as PNG (size: 76556 bytes)
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+INFO:livekit:livekit_ffi::server:139:livekit_ffi::server - initializing ffi server v0.12.28
+INFO:livekit:livekit_ffi::cabi:36:livekit_ffi::cabi - initializing ffi server v0.12.28
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+INFO:__main__:Connected to room mentra
+INFO:__main__:Track subscribed: 2 from participant glasses
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Track subscribed: 1 from participant glasses
+INFO:__main__:Track subscribed: 1 from participant mentra-audio
+INFO:__main__:Track subscribed: 1 from participant viewer
+INFO:__main__:Track subscribed: 2 from participant viewer
+INFO:__main__:Creating video stream for track from viewer
+INFO:__main__:Received data from mentra-audio topic: button
+INFO:__main__:Button pressed: {'data': 'button'}
+ERROR:livekit:failed to emit event data_received
+Traceback (most recent call last):
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\livekit\rtc\event_emitter.py", line 58, in emit
+    callback(*callback_args)
+    ~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\subscriber.py", line 55, in on_data_received
+    summarize_png(FRAMES[-1])
+                  ~~~~~~^^^^
+IndexError: list index out of range
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+INFO:livekit:livekit_ffi::server:139:livekit_ffi::server - initializing ffi server v0.12.28
+INFO:livekit:livekit_ffi::cabi:36:livekit_ffi::cabi - initializing ffi server v0.12.28
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+INFO:__main__:Connected to room mentra
+INFO:__main__:Track subscribed: 1 from participant glasses
+INFO:__main__:Track subscribed: 2 from participant glasses
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Track subscribed: 1 from participant mentra-audio
+INFO:__main__:Track subscribed: 1 from participant viewer
+INFO:__main__:Track subscribed: 2 from participant viewer
+INFO:__main__:Creating video stream for track from viewer
+INFO:__main__:Received data from mentra-audio topic: button
+INFO:__main__:Button pressed: {'data': 'button'}
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+ERROR:livekit:failed to emit event data_received
+Traceback (most recent call last):
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\livekit\rtc\event_emitter.py", line 58, in emit
+    callback(*callback_args)
+    ~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\subscriber.py", line 56, in on_data_received
+    summarize_png(FRAMES[-1])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\summarizer.py", line 36, in summarize_png
+    response = llm.invoke([message])
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_core\language_models\chat_models.py", line 378, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_core\language_models\chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_core\language_models\chat_models.py", line 782, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_community\chat_models\openai.py", line 476, in _generate
+    response = self.completion_with_retry(
+        messages=message_dicts, run_manager=run_manager, **params
+    )
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_community\chat_models\openai.py", line 387, in completion_with_retry
+    return self.client.create(**kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1087, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<43 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\openai\_base_client.py", line 1256, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\openai\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Invalid base64 image_url.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_base64'}}
+INFO:livekit:livekit_ffi::server:139:livekit_ffi::server - initializing ffi server v0.12.28
+INFO:livekit:livekit_ffi::cabi:36:livekit_ffi::cabi - initializing ffi server v0.12.28
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+WARNING:livekit:livekit::rtc_engine:395:livekit::rtc_engine - failed to connect: Connection("wait_pc_connection timed out"), retrying... (1/3)
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+INFO:__main__:Connected to room mentra
+INFO:__main__:Track subscribed: 1 from participant glasses
+INFO:__main__:Track subscribed: 2 from participant glasses
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Track subscribed: 1 from participant viewer
+INFO:__main__:Track subscribed: 2 from participant viewer
+INFO:__main__:Creating video stream for track from viewer
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+INFO:livekit:livekit_ffi::server:139:livekit_ffi::server - initializing ffi server v0.12.28
+INFO:livekit:livekit_ffi::cabi:36:livekit_ffi::cabi - initializing ffi server v0.12.28
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+INFO:__main__:Connected to room mentra
+INFO:__main__:Track subscribed: 1 from participant glasses
+INFO:__main__:Track subscribed: 2 from participant glasses
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Track subscribed: 1 from participant mentra-audio
+INFO:__main__:Track subscribed: 1 from participant viewer
+INFO:__main__:Track subscribed: 2 from participant viewer
+INFO:__main__:Creating video stream for track from viewer
+INFO:__main__:Track subscribed: 1 from participant glasses
+INFO:__main__:Track subscribed: 2 from participant glasses
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Received data from mentra-audio topic: button
+INFO:__main__:Button pressed: {'data': 'button'}
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+ERROR:livekit:failed to emit event data_received
+Traceback (most recent call last):
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\livekit\rtc\event_emitter.py", line 58, in emit
+    callback(*callback_args)
+    ~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\subscriber.py", line 57, in on_data_received
+    summarize_png(FRAMES[-1])
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\summarizer.py", line 36, in summarize_png
+    response = llm.invoke([message])
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_core\language_models\chat_models.py", line 378, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_core\language_models\chat_models.py", line 963, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_core\language_models\chat_models.py", line 782, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_core\language_models\chat_models.py", line 1028, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_community\chat_models\openai.py", line 476, in _generate
+    response = self.completion_with_retry(
+        messages=message_dicts, run_manager=run_manager, **params
+    )
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\langchain_community\chat_models\openai.py", line 387, in completion_with_retry
+    return self.client.create(**kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\openai\_utils\_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1087, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<43 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\openai\_base_client.py", line 1256, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\openai\_base_client.py", line 1044, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'Invalid base64 image_url.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_base64'}}
+INFO:__main__:Track subscribed: 1 from participant agent-AJ_FYNdKAj7MBdB
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-4' coro=<main.<locals>.on_track_subscribed.<locals>.process_video_frames() done, defined at C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\subscriber.py:72> exception=KeyboardInterrupt()>
+Traceback (most recent call last):
+  File "C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\subscriber.py", line 138, in <module>
+    loop.run_forever()
+  File "C:\Python313\Lib\asyncio\base_events.py", line 677, in run_forever
+    self._run_once()
+  File "C:\Python313\Lib\asyncio\base_events.py", line 2034, in _run_once
+    handle._run()
+  File "C:\Python313\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Stag\Desktop\Scripts\4eyes_agent\agent\subscriber.py", line 80, in process_video_frames
+    rgb_frame = frame.convert(rtc.VideoBufferType.RGB24)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\livekit\rtc\video_frame.py", line 195, in convert
+    resp = FfiClient.instance.request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stag\AppData\Local\uv\cache\environments-v2\subscriber-db3457fdda73498f\Lib\site-packages\livekit\rtc\_ffi_client.py", line 236, in request
+    handle = ffi_lib.livekit_ffi_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        data, proto_len, ctypes.byref(resp_ptr), ctypes.byref(resp_len)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+KeyboardInterrupt
+INFO:livekit:livekit_ffi::server:139:livekit_ffi::server - initializing ffi server v0.12.28
+INFO:livekit:livekit_ffi::cabi:36:livekit_ffi::cabi - initializing ffi server v0.12.28
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+INFO:__main__:Connected to room mentra
+INFO:__main__:Track subscribed: 1 from participant glasses
+INFO:__main__:Track subscribed: 2 from participant glasses
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Track subscribed: 1 from participant mentra-audio
+INFO:__main__:Track subscribed: 1 from participant viewer
+INFO:__main__:Track subscribed: 2 from participant viewer
+INFO:__main__:Creating video stream for track from viewer
+INFO:__main__:Received data from mentra-audio topic: button
+INFO:__main__:Button pressed: {'data': 'button'}
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:Received data from mentra-audio topic: button
+INFO:__main__:Button pressed: {'data': 'button'}
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:__main__:Track subscribed: 1 from participant agent-AJ_8YMtMzaeH5eB
