@@ -149,8 +149,8 @@ async def main(room: rtc.Room):
                         continue
                         
                     frame = event.frame
-                    logger.info("Received video frame: %dx%d from %s",
-                                frame.width, frame.height, participant.identity)
+                    # logger.info("Received video frame: %dx%d from %s",
+                    #             frame.width, frame.height, participant.identity)
 
                     # Extract frame data and encode to PNG
                     try:
