@@ -10,7 +10,8 @@
 #   "numpy",
 #   "langchain",
 #   "langgraph",
-#   "openai"
+#   "openai",
+#   "supabase"
 # ]
 # ///
 

@@ -53,6 +53,10 @@ def summarize_gif(gif):
     response = llm.invoke([message])
     return {"summary": response.content}
 
+def send_gif_to_client(gif):
+    summary = summarize_gif(gif)["summary"]
+
+
 # ---- LangGraph ----
 builder = StateGraph(ImageSummaryState)
 builder.add_node("summarize", summarize_image)

@@ -1195,3 +1195,43 @@ INFO:__main__:Received data from mentra-audio topic: button
 INFO:__main__:Button pressed: {'data': 'button'}
 INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 INFO:__main__:Track subscribed: 1 from participant agent-AJ_8YMtMzaeH5eB
+WARNING:livekit:livekit::rtc_engine:453:livekit::rtc_engine - received session close: "signal client closed: \"ping timeout\"" UnknownReason Resume
+ERROR:livekit:livekit::rtc_engine:729:livekit::rtc_engine - resuming connection... attempt: 0
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&reconnect=1&sid=PA_jgaGkLZuT9cU&access_token=...
+INFO:livekit:livekit::rtc_engine:666:livekit::rtc_engine - RtcEngine successfully recovered
+WARNING:livekit:livekit::rtc_engine:453:livekit::rtc_engine - received session close: "signal client closed: \"ping timeout\"" UnknownReason Resume
+ERROR:livekit:livekit::rtc_engine:729:livekit::rtc_engine - resuming connection... attempt: 0
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&reconnect=1&sid=PA_jgaGkLZuT9cU&access_token=...
+INFO:livekit:livekit::rtc_engine:666:livekit::rtc_engine - RtcEngine successfully recovered
+ERROR:livekit:livekit_api::signal_client::signal_stream:371:livekit_api::signal_client::signal_stream - failed to send pong message: Protocol(SendAfterClosing)
+WARNING:livekit:livekit::rtc_engine:453:livekit::rtc_engine - received session close: "server request to leave" ConnectionTimeout Resume
+WARNING:livekit:livekit::rtc_engine:453:livekit::rtc_engine - received session close: "signal client closed: \"stream closed\"" UnknownReason Resume
+ERROR:livekit:livekit::rtc_engine:729:livekit::rtc_engine - resuming connection... attempt: 0
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&reconnect=1&sid=PA_jgaGkLZuT9cU&access_token=...
+INFO:livekit:livekit::rtc_engine:666:livekit::rtc_engine - RtcEngine successfully recovered
+INFO:__main__:Track subscribed: 1 from participant mentra-audio
+WARNING:livekit:livekit::rtc_engine:453:livekit::rtc_engine - received session close: "signal client closed: \"ping timeout\"" UnknownReason Resume
+ERROR:livekit:livekit::rtc_engine:729:livekit::rtc_engine - resuming connection... attempt: 0
+ERROR:livekit:livekit::rtc_engine::rtc_session:787:livekit::rtc_engine::rtc_session - Subscriber pc state failed
+WARNING:livekit:livekit::rtc_engine:453:livekit::rtc_engine - received session close: "pc_state failed" UnknownReason Resume
+ERROR:livekit:livekit::rtc_engine::rtc_session:501:livekit::rtc_engine::rtc_session - rtc_event is taking too much time: IceCandidate { ice_candidate: IceCandidate { candidate: "candidate:258280824 1 udp 2122260223 172.27.208.1 55852 typ host generation 3 ufrag syXs network-id 1" }, target: Subscriber }
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+ERROR:livekit:error putting to queue: Event loop is closed
+INFO:livekit:livekit_ffi::server:139:livekit_ffi::server - initializing ffi server v0.12.28
+INFO:livekit:livekit_ffi::cabi:36:livekit_ffi::cabi - initializing ffi server v0.12.28
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+INFO:__main__:Connected to room mentra
+INFO:__main__:Track subscribed: 1 from participant glasses
+INFO:__main__:Track subscribed: 2 from participant glasses
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Track subscribed: 1 from participant mentra-audio
+INFO:__main__:Track subscribed: 2 from participant viewer
+INFO:__main__:Creating video stream for track from viewer
+INFO:__main__:Track subscribed: 1 from participant viewer
+INFO:__main__:Received data from mentra-audio topic: button
+INFO:__main__:Button pressed: {'data': 'button'}
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
