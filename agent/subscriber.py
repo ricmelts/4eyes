@@ -42,10 +42,14 @@ ROOM_NAME = os.environ.get("ROOM_NAME")
 
 SKIP_FRAMES = 5 #how many frames to skip when capturing for gif
 
-FRAMES = []
-MAX_FRAMES = 100 # total number of frames to store for generation
+VIDEO_FPS = 14 # fps of the video stream
 
-def generate_gif(frames, filename=None, duration=200):
+FRAMES = [] # store frames for gif generation
+CAPTURE_DURATION = 10 # duration of the capture in seconds
+MAX_FRAMES = VIDEO_FPS * CAPTURE_DURATION # total number of frames to store for generation 
+GIF_FRAME_DURATION = 100 
+
+def generate_gif(frames, filename=None, duration=GIF_FRAME_DURATION):
     """
     Generate an animated GIF from a list of PNG buffers.
     
