@@ -1,0 +1,45 @@
+INFO:livekit:livekit_ffi::server:139:livekit_ffi::server - initializing ffi server v0.12.28
+INFO:livekit:livekit_ffi::cabi:36:livekit_ffi::cabi - initializing ffi server v0.12.28
+INFO:livekit:livekit_api::signal_client::signal_stream:106:livekit_api::signal_client::signal_stream - connecting to wss://robot-b7233f1t.livekit.cloud/rtc?sdk=python&protocol=16&auto_subscribe=1&adaptive_stream=0&version=1.0.11&access_token=...
+INFO:__main__:Connected to room mentra
+INFO:__main__:Track subscribed: 2 from participant glasses
+INFO:__main__:Creating video stream for track from glasses
+INFO:__main__:Track subscribed: 1 from participant glasses
+INFO:__main__:Track subscribed: 1 from participant mentra-audio
+INFO:__main__:Track subscribed: 1 from participant viewer
+INFO:__main__:Track subscribed: 2 from participant viewer
+INFO:__main__:Creating video stream for track from viewer
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+INFO:__main__:Received video frame: 960x540 from glasses
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<main.<locals>.on_track_subscribed.<locals>.process_video_frames() done, defined at /Users/dc/workspace/mentra/4eyes/agent/subscriber.py:49> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+ERROR:asyncio:Task was destroyed but it is pending!
+task: <Task pending name='Task-6' coro=<main.<locals>.on_track_subscribed.<locals>.process_video_frames() done, defined at /Users/dc/workspace/mentra/4eyes/agent/subscriber.py:49> wait_for=<Future pending cb=[Task.task_wakeup()]>>
