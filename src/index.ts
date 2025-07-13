@@ -1,4 +1,4 @@
-import { AppServer, AppSession, ViewType, AuthenticatedRequest, PhotoData, StreamType } from '@mentra/sdk';
+import { AppServer, AppSession, ViewType, AuthenticatedRequest, PhotoData, StreamType, TranscriptionData, RtmpStreamStatus } from '@mentra/sdk';
 import { Request, Response } from 'express';
 import * as ejs from 'ejs';
 import * as path from 'path';
@@ -223,12 +223,48 @@ class ExampleMentraOSApp extends AppServer {
     //   // Add samples to jitter buffer instead of publishing directly
     //   this.jitterBuffer.addSamples(pcmData);
     // });
-    
-
+      
     // set the initial state of the user
     this.isStreamingPhotos.set(userId, false);
     // this.nextPhotoTime.set(userId, Date.now());
-
+    
+    
+  
+    const cleanup = session.camera.onStreamStatus((status: RtmpStreamStatus) => {
+      console.log(`Stream status: ${status.status}`);
+  
+      // Log detailed information if available
+      if (status.stats) {
+        console.log(`Stream stats:
+          Bitrate: ${status.stats.bitrate} bps
+          FPS: ${status.stats.fps}
+          Dropped frames: ${status.stats.droppedFrames}
+          Duration: ${status.stats.duration} seconds
+        `);
+      }
+  
+      // Handle different status types
+      switch (status.status) {
+        case 'initializing':
+          console.log('Stream is initializing...');
+          break;
+        case 'streaming':
+          console.log('Stream is actively streaming!');
+          break;
+        case 'active':
+          console.log('Stream is active and running!');
+          break;
+        case 'error':
+          console.error(`Stream error: ${status.errorDetails}`);
+          break;
+        case 'stopped':
+          console.log('Stream has stopped');
+          // Clean up resources or update UI as needed
+          break;
+      }
+    });
+    
+      
     // this gets called whenever a user presses a button
     session.events.onButtonPress(async (button) => {
       this.logger.info(`Button pressed: ${button.buttonId}, type: ${button.pressType}`);
@@ -239,7 +275,7 @@ class ExampleMentraOSApp extends AppServer {
           // start rtmp 
           try {
             await session.camera.startStream({
-              rtmpUrl: 'rtmp://robot-b7233f1t.rtmp.livekit.cloud/x/kwjvuNSFgxcw',
+              rtmpUrl: 'rtmp://robot-b7233f1t.rtmp.livekit.cloud/x/FJNrmYvfC4AC',
               video: {
                 width: 480,
                 height: 640,
@@ -284,6 +320,19 @@ class ExampleMentraOSApp extends AppServer {
 
       } else {
         publishDataToRoom("button");
+        // await session.audio.speak(
+        //     "This message uses custom voice settings for a different sound.",
+        //     {
+        //       //voice_id: "your_elevenlabs_voice_id", // Optional: specific ElevenLabs voice
+        //       model_id: "eleven_flash_v2_5", // Optional: specific model
+        //       voice_settings: {      // each setting is optional
+        //         stability: 0.7,      // Voice consistency (0.0-1.0)
+        //         similarity_boost: 0.8, // Voice similarity (0.0-1.0)
+        //         style: 0.3,          // Speaking style (0.0-1.0)
+        //         speed: 0.9           // Speaking speed (0.25-4.0)
+        //       }
+        //     }
+        //   );
         // session.layouts.showTextWall("Button pressed, starting stream", {durationMs: 4000});
         // the user pressed the button, so we take a single photo
         // try {
@@ -308,7 +357,7 @@ class ExampleMentraOSApp extends AppServer {
     // Stop audio publishing and clean up jitter buffer
     this.stopAudioPublishing();
     
-    await room.disconnect();
+    if (room) await room.disconnect();
     
     this.logger.info(`Session stopped for user ${userId}, reason: ${reason}`);
     

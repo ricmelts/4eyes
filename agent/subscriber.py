@@ -3,7 +3,6 @@
 # dependencies = [
 #   "livekit",
 #   "livekit_api",
-#   "pyserial",
 #   "python-dotenv",
 #   "asyncio",
 #   "opencv-python",
@@ -21,7 +20,6 @@ import os
 import logging
 import asyncio
 import json
-import serial
 import base64
 import cv2
 import numpy as np
@@ -188,7 +186,7 @@ async def main(room: rtc.Room):
                         bgr_frame = cv2.cvtColor(frame_array, cv2.COLOR_RGB2BGR)
                         
                         # Warp the image by resampling to swap width and height dimensions
-                        bgr_frame = cv2.resize(bgr_frame, (height, width), interpolation=cv2.INTER_LINEAR)
+                        bgr_frame = cv2.resize(bgr_frame, (540, 960), interpolation=cv2.INTER_LINEAR)
 
                         # Encode as PNG
                         success, png_buffer = cv2.imencode('.png', bgr_frame)
@@ -229,7 +227,6 @@ if __name__ == "__main__":
 
     async def cleanup():
         await room.disconnect()
-        cv2.destroyAllWindows()  # Close all OpenCV windows
         loop.stop()
 
 
