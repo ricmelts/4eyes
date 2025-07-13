@@ -12,6 +12,7 @@
 #   "langgraph",
 #   "langchain_community",
 #   "openai",
+#   "supabase",
 #   "pillow"
 # ]
 # ///
@@ -123,11 +124,27 @@ async def main(room: rtc.Room):
             # print(FRAMES[-1])
             # summarize_png(FRAMES[-1])
             
-            # encode into animate gif
-            gif_bytes = generate_gif(FRAMES)
-            send_gif_to_supabase_pipeline(gif_bytes)
-
-            # send the gif_bytes to openai
+            # Move GIF generation to a separate async task to avoid blocking
+            async def process_gif():
+                try:
+                    # Create a copy of frames to avoid race conditions
+                    frames_copy = FRAMES.copy()
+                    logger.info("Starting GIF generation with %d frames", len(frames_copy))
+                    
+                    # encode into animate gif
+                    gif_bytes = generate_gif(frames_copy)
+                    if gif_bytes:
+                        send_gif_to_supabase_pipeline(gif_bytes)
+                        logger.info("GIF processing completed successfully")
+                    else:
+                        logger.error("Failed to generate GIF")
+                        
+                    # send the gif_bytes to openai
+                except Exception as e:
+                    logger.error("Error processing GIF: %s", e)
+            
+            # Create and run the task asynchronously
+            asyncio.create_task(process_gif())
 
     # handler for when a track is subscribed
     @room.on("track_subscribed")
