@@ -47,7 +47,7 @@ class AudioJitterBuffer {
   private maxBufferSize: number;
   private targetBufferSize: number;
   
-  constructor(maxBufferSize: number = 10, targetBufferSize: number = 3) {
+  constructor(maxBufferSize: number = 10, targetBufferSize: number = 4) {
     this.maxBufferSize = maxBufferSize;
     this.targetBufferSize = targetBufferSize;
   }
@@ -181,14 +181,14 @@ class ExampleMentraOSApp extends AppServer {
     async function connectToRoom() {
       room = new Room();
       // // set up room
-      await room.connect(process.env.LIVEKIT_URL as string, process.env.LIVEKIT_TOKEN as string, { autoSubscribe: true, dynacast: true });
+      await room.connect(process.env.LIVEKIT_URL as string, process.env.LIVEKIT_TOKEN as string, { autoSubscribe: false, dynacast: false });
       
       // set up audio track
-      const track = LocalAudioTrack.createAudioTrack('audio', source);
-      const options = new TrackPublishOptions();
+    //   const track = LocalAudioTrack.createAudioTrack('audio', source);
+    //   const options = new TrackPublishOptions();
     
-      options.source = TrackSource.SOURCE_MICROPHONE;
-      const pub = await room.localParticipant?.publishTrack(track, options);
+    //   options.source = TrackSource.SOURCE_MICROPHONE;
+    //   const pub = await room.localParticipant?.publishTrack(track, options);
 
       
     }
@@ -308,8 +308,9 @@ class ExampleMentraOSApp extends AppServer {
     // Stop audio publishing and clean up jitter buffer
     this.stopAudioPublishing();
     
+    await room.disconnect();
+    
     this.logger.info(`Session stopped for user ${userId}, reason: ${reason}`);
-    room.disconnect();
     
   }
 
