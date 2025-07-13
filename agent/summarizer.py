@@ -5,6 +5,7 @@ from langchain.chat_models import ChatOpenAI
 from langchain.schema.messages import HumanMessage
 from langgraph.graph import StateGraph
 from dotenv import load_dotenv
+from typing import Any
 import openai
 
 load_dotenv()
@@ -37,6 +38,19 @@ def summarize_png(img):
     ])
     response = llm.invoke([message])
     print(response.content)
+    return {"summary": response.content}
+
+def summarize_gif(gif):
+    b64 = base64.b64encode(gif).decode("utf-8")
+
+
+    message = HumanMessage(content=[
+        {"type": "text",
+         "text": "This is an animated GIF. Please summarize the animation as if you watched a short silent video. Summarize the time-series aspect of it."},
+        {"type": "image_url", "image_url": {"url": f"data:image/gif;base64,{b64}"}}
+    ])
+
+    response = llm.invoke([message])
     return {"summary": response.content}
 
 # ---- LangGraph ----
