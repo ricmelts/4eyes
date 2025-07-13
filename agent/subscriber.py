@@ -40,9 +40,10 @@ LIVEKIT_URL = os.environ.get("LIVEKIT_URL")
 SUB_TOKEN = os.environ.get("SUB_TOKEN")
 ROOM_NAME = os.environ.get("ROOM_NAME")
 
+SKIP_FRAMES = 5 #how many frames to skip when capturing for gif
 
 FRAMES = []
-MAX_FRAMES = 500
+MAX_FRAMES = 100 # total number of frames to store for generation
 
 def generate_gif(frames, filename=None, duration=200):
     """
@@ -167,7 +168,7 @@ async def main(room: rtc.Room):
                     frame_counter += 1
                     
                     # Only process every 5th frame
-                    if frame_counter % 3 != 0:
+                    if frame_counter % SKIP_FRAMES != 0:
                         continue
                         
                     frame = event.frame
