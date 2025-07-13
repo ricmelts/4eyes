@@ -14,6 +14,7 @@ import logging
 import asyncio
 import json
 import serial
+import base64
 from dotenv import load_dotenv
 from signal import SIGINT, SIGTERM
 from livekit import rtc
@@ -59,9 +60,31 @@ async def main(room: rtc.Room):
                     frame = event.frame
                     logger.info("Received video frame: %dx%d from %s", 
                                frame.width, frame.height, participant.identity)
-                    # Process the frame here (e.g., save to file, analyze, etc.)
-                    # The frame contains raw video data that can be processed
                     
+                    # Extract frame data and encode to base64
+                    try:
+                        rgb_frame = frame.convert(rtc.VideoBufferType.RGB24)
+            
+                        # Get the RGB data
+                        rgb_data = rgb_frame.data
+                      
+                        # Encode to base64
+                        base64_data = base64.b64encode(rgb_data).decode('utf-8')
+                        
+                        logger.info("Frame encoded to base64, length: %d characters", len(base64_data))
+                        
+                        # You can now use base64_data for transmission or storage
+                        # For example, you could send it via a data packet:
+                        # frame_info = {
+                        #     "width": frame.width,
+                        #     "height": frame.height,
+                        #     "format": str(frame.type) if hasattr(frame, 'type') else "unknown",
+                        #     "data": base64_data
+                        # }
+                        
+                    except Exception as e:
+                        logger.error("Error encoding frame to base64: %s", e)
+
             # Start the frame processing task
             asyncio.create_task(process_video_frames())
 
