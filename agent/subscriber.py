@@ -24,6 +24,7 @@ import serial
 import base64
 import cv2
 import numpy as np
+from datetime import datetime
 from dotenv import load_dotenv
 from signal import SIGINT, SIGTERM
 from livekit import rtc
@@ -40,20 +41,28 @@ ROOM_NAME = os.environ.get("ROOM_NAME")
 
 
 FRAMES = []
-MAX_FRAMES = 1000
+MAX_FRAMES = 500
 
-def generate_gif(frames, filename="output.gif", duration=100):
+def generate_gif(frames, filename=None, duration=200):
     """
     Generate an animated GIF from a list of PNG buffers.
     
     Args:
         frames: List of PNG buffers (from cv2.imencode)
-        filename: Output filename for the GIF
+        filename: Output filename for the GIF (optional, defaults to timestamp-based name)
         duration: Duration between frames in milliseconds
+    
+    Returns:
+        bytes: The generated GIF as a byte array, or None if failed
     """
     if not frames:
         logging.warning("No frames to generate GIF")
-        return
+        return None
+    
+    # Generate timestamp-based filename if none provided
+    if filename is None:
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"output_{timestamp}.gif"
     
     try:
         # Convert PNG buffers to PIL Images
@@ -66,20 +75,32 @@ def generate_gif(frames, filename="output.gif", duration=100):
             img = Image.open(io.BytesIO(frame_bytes))
             pil_images.append(img)
         
-        # Save as animated GIF
+        # Save as animated GIF to BytesIO buffer
         if pil_images:
+            gif_buffer = io.BytesIO()
             pil_images[0].save(
-                filename,
+                gif_buffer,
                 format='GIF',
                 save_all=True,
                 append_images=pil_images[1:],
                 duration=duration,
                 loop=0  # 0 means infinite loop
             )
+            
+            # Also save to file for backwards compatibility
+            gif_buffer.seek(0)
+            with open(filename, 'wb') as f:
+                f.write(gif_buffer.getvalue())
+            
             logging.info(f"Successfully generated GIF with {len(pil_images)} frames: {filename}")
+            
+            # Return the bytes
+            gif_buffer.seek(0)
+            return gif_buffer.getvalue()
         
     except Exception as e:
         logging.error(f"Error generating GIF: {e}")
+        return None
 
 
 async def main(room: rtc.Room):
@@ -101,7 +122,9 @@ async def main(room: rtc.Room):
             summarize_png(FRAMES[-1])
             
             # encode into animate gif
-            generate_gif(FRAMES)
+            gif_bytes = generate_gif(FRAMES)
+            
+            # send the gif_bytes to openai
 
     # handler for when a track is subscribed
     @room.on("track_subscribed")
@@ -117,7 +140,14 @@ async def main(room: rtc.Room):
 
             # Create async task to process video frames
             async def process_video_frames():
+                frame_counter = 0
                 async for event in video_stream:
+                    frame_counter += 1
+                    
+                    # Only process every 5th frame
+                    if frame_counter % 3 != 0:
+                        continue
+                        
                     frame = event.frame
                     logger.info("Received video frame: %dx%d from %s",
                                 frame.width, frame.height, participant.identity)
