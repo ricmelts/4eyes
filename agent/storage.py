@@ -1,16 +1,15 @@
+import base64
+import io
 import os
 import uuid
-import base64
-import requests
 from datetime import datetime
-from dotenv import load_dotenv
 
+import requests
+from PIL import Image, ImageSequence
+from dotenv import load_dotenv
 from langchain.chat_models import ChatOpenAI
 from langchain.schema.messages import HumanMessage
 from supabase import create_client
-
-from PIL import Image, ImageSequence
-import io
 
 MAX_MB = 50  # Supabase storage upload limit
 
@@ -31,11 +30,16 @@ supabase = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
 def summarize_gif(gif_bytes: bytes) -> str:
     b64 = base64.b64encode(gif_bytes).decode("utf-8")
     message = HumanMessage(content=[
-        {"type": "text", "text": "This is an animated GIF. Please summarize the animation as if you watched a short silent video."},
+        {"type": "text", "text": "Watch this animated GIF as if it is a short silent video."
+                                 "Describe exactly what happens with clear and detailed visual storytelling."
+                                 "Imagine you are reminding someone of a moment they saw before."
+                                 "Be specific and concrete."
+                                 "Focus on what is actually shown without adding poetic language or nostalgia."},
         {"type": "image_url", "image_url": {"url": f"data:image/gif;base64,{b64}"}}
     ])
     response = llm.invoke([message])
     return response.content
+
 
 def compress_gif_bytes(gif_bytes: bytes, max_width: int = 400, fps: int = 10) -> bytes:
     input_image = Image.open(io.BytesIO(gif_bytes))
@@ -65,12 +69,13 @@ def compress_gif_bytes(gif_bytes: bytes, max_width: int = 400, fps: int = 10) ->
 
     return output_bytes_io.getvalue()
 
+
 def upload_gif_to_supabase(gif_bytes: bytes, file_id: str) -> str:
     # Compress if too large
     if len(gif_bytes) > MAX_MB * 1024 * 1024:
-        print(f"⚠️ GIF is {len(gif_bytes) / (1024*1024):.2f}MB — compressing...")
+        print(f"⚠️ GIF is {len(gif_bytes) / (1024 * 1024):.2f}MB — compressing...")
         gif_bytes = compress_gif_bytes(gif_bytes)
-        print(f"✅ Compressed to {len(gif_bytes) / (1024*1024):.2f}MB")
+        print(f"✅ Compressed to {len(gif_bytes) / (1024 * 1024):.2f}MB")
 
     upload_url = f"{SUPABASE_URL}/storage/v1/object/{BUCKET_NAME}/{file_id}"
 
@@ -92,12 +97,11 @@ def store_metadata(file_path: str, public_url: str, summary: str):
         "file_path": file_path,
         "public_url": public_url,
         "summary": summary,
-        "created_at": datetime.utcnow().isoformat()
+        "created_at": datetime.utcnow().isoformat()  # also fixes your UTC warning
     }).execute()
 
-    if response.get("status_code") not in [200, 201]:
+    if not response.data:
         raise Exception(f"Metadata insert failed: {response}")
-    return response
 
 
 def send_gif_to_supabase_pipeline(gif_bytes: bytes) -> dict:
@@ -127,7 +131,7 @@ def send_gif_to_supabase_pipeline(gif_bytes: bytes) -> dict:
 if __name__ == "__main__":
     from pathlib import Path
 
-    gif_path = "output.gif"
+    gif_path = "output_20250713_001810.gif"
     gif_bytes = Path(gif_path).read_bytes()
     result = send_gif_to_supabase_pipeline(gif_bytes)
     print(result)
