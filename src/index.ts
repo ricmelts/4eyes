@@ -99,17 +99,7 @@ class AudioJitterBuffer {
     
 // init LK
 config();
-// create access token from API credentials
-const token = new AccessToken(process.env.LIVEKIT_API_KEY, process.env.LIVEKIT_API_SECRET, {
-  identity: 'mentra-audio',
-});
-token.addGrant({
-  room: 'mentra',
-  roomJoin: true,
-  roomCreate: true,
-  canPublish: true,
-});
-const jwt = await token.toJwt();
+
 
 // global room object
 let room;
@@ -191,7 +181,7 @@ class ExampleMentraOSApp extends AppServer {
     async function connectToRoom() {
       room = new Room();
       // // set up room
-      await room.connect(process.env.LIVEKIT_URL as string, jwt, { autoSubscribe: true, dynacast: true });
+      await room.connect(process.env.LIVEKIT_URL as string, process.env.LIVEKIT_TOKEN as string, { autoSubscribe: true, dynacast: true });
       
       // set up audio track
       const track = LocalAudioTrack.createAudioTrack('audio', source);
@@ -214,7 +204,7 @@ class ExampleMentraOSApp extends AppServer {
       
     }
       
-    // connectToRoom();
+    connectToRoom();
 
     // this.logger.info('subscribing to audio chunk');
     // session.subscribe(StreamType.AUDIO_CHUNK);

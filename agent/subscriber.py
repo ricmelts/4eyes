@@ -133,8 +133,11 @@ async def main(room: rtc.Room):
 
         # If it's a video track, create a video stream to process frames
         if track.kind == rtc.TrackKind.KIND_VIDEO:
+            
+            if participant.identity != "glasses":
+                return
+            
             logger.info("Creating video stream for track from %s", participant.identity)
-
             # Create a video stream from the track
             video_stream = rtc.VideoStream(track)
 
