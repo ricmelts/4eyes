@@ -40,13 +40,13 @@ LIVEKIT_URL = os.environ.get("LIVEKIT_URL")
 SUB_TOKEN = os.environ.get("SUB_TOKEN")
 ROOM_NAME = os.environ.get("ROOM_NAME")
 
-SKIP_FRAMES = 5 #how many frames to skip when capturing for gif
+SKIP_FRAMES = 3 #how many frames to skip when capturing for gif
 
 VIDEO_FPS = 14 # fps of the video stream
 
 FRAMES = [] # store frames for gif generation
-CAPTURE_DURATION = 6 # duration of the capture in seconds
-MAX_FRAMES = VIDEO_FPS * CAPTURE_DURATION # total number of frames to store for generation 
+CAPTURE_DURATION = 20 # duration of the capture in seconds
+MAX_FRAMES = VIDEO_FPS // SKIP_FRAMES * CAPTURE_DURATION # total number of frames to store for generation 
 GIF_FRAME_DURATION = 100 
 
 # Delay before processing GIF after button press (in seconds)
@@ -54,10 +54,10 @@ PROCESS_GIF_DELAY = 2.0
 
 def generate_gif(frames, filename=None, duration=GIF_FRAME_DURATION):
     """
-    Generate an animated GIF from a list of PNG buffers.
+    Generate an animated GIF from a list of PNG bytes.
     
     Args:
-        frames: List of PNG buffers (from cv2.imencode)
+        frames: List of PNG bytes (from PIL save)
         filename: Output filename for the GIF (optional, defaults to timestamp-based name)
         duration: Duration between frames in milliseconds
     
@@ -74,12 +74,9 @@ def generate_gif(frames, filename=None, duration=GIF_FRAME_DURATION):
         filename = f"output_{timestamp}.gif"
     
     try:
-        # Convert PNG buffers to PIL Images
+        # Convert PNG bytes to PIL Images
         pil_images = []
-        for frame_buffer in frames:
-            # Convert numpy array buffer to bytes
-            frame_bytes = frame_buffer.tobytes()
-            
+        for frame_bytes in frames:
             # Create PIL Image from bytes
             img = Image.open(io.BytesIO(frame_bytes))
             pil_images.append(img)
@@ -134,6 +131,13 @@ async def main(room: rtc.Room):
             # Move GIF generation to a separate async task to avoid blocking
             async def process_gif():
                 try:
+                    # send signal to indicate glasses have captured
+                    await room.local_participant.publish_data(
+                    "ok",
+                    topic="confirmation",
+                    reliable=True,
+                )
+                    
                     # Wait for the configured delay before processing
                     logger.info("Button pressed, waiting %s seconds before processing GIF", PROCESS_GIF_DELAY)
                     await asyncio.sleep(PROCESS_GIF_DELAY)
@@ -145,7 +149,7 @@ async def main(room: rtc.Room):
                     # encode into animate gif
                     gif_bytes = generate_gif(frames_copy)
                     if gif_bytes:
-                        send_gif_to_supabase_pipeline(gif_bytes)
+                        # send_gif_to_supabase_pipeline(gif_bytes)
                         logger.info("GIF processing completed successfully")
                     else:
                         logger.error("Failed to generate GIF")
@@ -188,43 +192,56 @@ async def main(room: rtc.Room):
 
                     # Extract frame data and encode to PNG
                     try:
-                        bgra_frame = frame.convert(rtc.VideoBufferType.BGRA)
-
-                        # Convert to numpy array
+                        rgb_frame = frame.convert(rtc.VideoBufferType.RGB24)
+                        
+                        # Get the RGB data
+                        rgb_data = rgb_frame.data
                         width, height = frame.width, frame.height
-                        frame_data = np.frombuffer(bgra_frame.data, dtype=np.uint8)
-                        frame_array = frame_data.reshape((height, width, 4))
-
-                        # Extract BGR channels (drop alpha channel) - already in correct order for OpenCV
-                        bgr_frame = frame_array[:, :, :3]
                         
-                        # Crop center square using the smallest dimension
-                        h, w = bgr_frame.shape[:2]
-                        crop_size = min(h, w)
-                        
-                        # Calculate center crop coordinates
-                        start_x = (w - crop_size) // 2
-                        start_y = (h - crop_size) // 2
-                        
-                        # Crop the center square
-                        bgr_frame = bgr_frame[start_y:start_y + crop_size, start_x:start_x + crop_size]
-                        
-                        # Resize to 540x540 square
-                        bgr_frame = cv2.resize(bgr_frame, (540, 540), interpolation=cv2.INTER_LINEAR)
-
-                        # Encode as PNG
-                        success, png_buffer = cv2.imencode('.png', bgr_frame)
-
-                        FRAMES.append(png_buffer)
-                        if len(FRAMES) > MAX_FRAMES:
-                            FRAMES.pop(0)
-
-                        if success:
+                        if rgb_data and len(rgb_data) > 0:
+                            # Create PIL Image from RGB24 data
+                            img = Image.frombuffer('RGB', (width, height), rgb_data, 'raw', 'RGB', 0, 1)
+                            
+                            # Crop maximum area from center that matches target aspect ratio
+                            target_width, target_height = 540, 540
+                            target_aspect = target_width / target_height
+                            source_aspect = img.width / img.height
+                            
+                            if source_aspect > target_aspect:
+                                # Source is wider, crop width to match target aspect ratio
+                                new_width = int(img.height * target_aspect)
+                                new_height = img.height
+                            else:
+                                # Source is taller, crop height to match target aspect ratio
+                                new_width = img.width
+                                new_height = int(img.width / target_aspect)
+                            
+                            # Calculate crop box (center crop)
+                            left = (img.width - new_width) // 2
+                            top = (img.height - new_height) // 2
+                            right = left + new_width
+                            bottom = top + new_height
+                            
+                            # Crop the image from center
+                            img_cropped = img.crop((left, top, right, bottom))
+                            
+                            # Resize to target dimensions
+                            img = img_cropped.resize((target_width, target_height), Image.Resampling.LANCZOS)
+                            
+                            # Encode as PNG using PIL
+                            png_buffer = io.BytesIO()
+                            img.save(png_buffer, format='PNG')
+                            png_bytes = png_buffer.getvalue()
+                            
+                            FRAMES.append(png_bytes)
+                            if len(FRAMES) > MAX_FRAMES:
+                                FRAMES.pop(0)
+                            
                             # Convert to base64 for transmission/storage if needed
-                            png_base64 = base64.b64encode(png_buffer).decode('utf-8')
-                            # logger.info("Successfully encoded frame as PNG (size: %d bytes)", len(png_buffer))
+                            png_base64 = base64.b64encode(png_bytes).decode('utf-8')
+                            # logger.info("Successfully encoded frame as PNG (size: %d bytes)", len(png_bytes))
                         else:
-                            logger.error("Failed to encode frame as PNG")
+                            logger.error("No RGB data available for frame")
 
                     except Exception as e:
                         logger.error("Error encoding frame to base64: %s", e)

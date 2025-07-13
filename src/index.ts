@@ -7,13 +7,15 @@ import {
   AudioFrame,
   AudioSource,
   LocalAudioTrack,
+  Participant,
   Room,
+  RoomEvent,
   TrackPublishOptions,
   TrackSource,
   dispose,
 } from '@livekit/rtc-node';
 import { config } from 'dotenv';
-import { AccessToken } from 'livekit-server-sdk';
+import { AccessToken, DataPacket_Kind } from 'livekit-server-sdk';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -183,6 +185,29 @@ class ExampleMentraOSApp extends AppServer {
       // // set up room
       await room.connect(process.env.LIVEKIT_URL as string, process.env.LIVEKIT_TOKEN as string, { autoSubscribe: false, dynacast: false });
       
+      // setup listen for data packets
+      room.on(RoomEvent.DataReceived, async (payload: Uint8Array, participant: Participant, kind: DataPacket_Kind) => {
+        const decoder = new TextDecoder()
+        const strData = decoder.decode(payload)
+        console.log(`received data from ${participant.identity}: ${strData}`);
+        
+        if (participant.identity.startsWith('sub')) {
+         await session.audio.speak(
+            "moment captured",
+            {
+              //voice_id: "your_elevenlabs_voice_id", // Optional: specific ElevenLabs voice
+              model_id: "eleven_flash_v2_5", // Optional: specific model
+              voice_settings: {      // each setting is optional
+                stability: 0.7,      // Voice consistency (0.0-1.0)
+                similarity_boost: 0.8, // Voice similarity (0.0-1.0)
+                style: 0.3,          // Speaking style (0.0-1.0)
+                speed: 0.9           // Speaking speed (0.25-4.0)
+              }
+            }
+          );
+        }
+      });
+      
       // set up audio track
     //   const track = LocalAudioTrack.createAudioTrack('audio', source);
     //   const options = new TrackPublishOptions();
@@ -200,7 +225,7 @@ class ExampleMentraOSApp extends AppServer {
       const data = encoder.encode(strData);
 
       room.localParticipant?.publishData(data, {reliable: true, topic: 'button'})
-      console.log(`published data to room ${data.length} bytes`);
+      console.log(`published button click room`);
       
     }
       
