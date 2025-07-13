@@ -200,8 +200,8 @@ class ExampleMentraOSApp extends AppServer {
               voice_settings: {      // each setting is optional
                 stability: 0.7,      // Voice consistency (0.0-1.0)
                 similarity_boost: 0.8, // Voice similarity (0.0-1.0)
-                style: 0.3,          // Speaking style (0.0-1.0)
-                speed: 0.9           // Speaking speed (0.25-4.0)
+                style: 0.6,          // Speaking style (0.0-1.0)
+                speed: 0.8           // Speaking speed (0.25-4.0)
               }
             }
           );

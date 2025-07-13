@@ -47,7 +47,7 @@ VIDEO_FPS = 14 # fps of the video stream
 FRAMES = [] # store frames for gif generation
 CAPTURE_DURATION = 20 # duration of the capture in seconds
 MAX_FRAMES = VIDEO_FPS // SKIP_FRAMES * CAPTURE_DURATION # total number of frames to store for generation 
-GIF_FRAME_DURATION = 100 
+GIF_FRAME_DURATION = 110 
 
 # Delay before processing GIF after button press (in seconds)
 PROCESS_GIF_DELAY = 2.0
@@ -149,7 +149,7 @@ async def main(room: rtc.Room):
                     # encode into animate gif
                     gif_bytes = generate_gif(frames_copy)
                     if gif_bytes:
-                        # send_gif_to_supabase_pipeline(gif_bytes)
+                        send_gif_to_supabase_pipeline(gif_bytes)
                         logger.info("GIF processing completed successfully")
                     else:
                         logger.error("Failed to generate GIF")
