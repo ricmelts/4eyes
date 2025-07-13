@@ -10,8 +10,9 @@
 #   "numpy",
 #   "langchain",
 #   "langgraph",
+#   "langchain_community",
 #   "openai",
-#   "supabase"
+#   "pillow"
 # ]
 # ///
 
@@ -26,6 +27,8 @@ import numpy as np
 from dotenv import load_dotenv
 from signal import SIGINT, SIGTERM
 from livekit import rtc
+from PIL import Image
+import io
 
 from summarizer import summarize_png
 
@@ -37,7 +40,47 @@ ROOM_NAME = os.environ.get("ROOM_NAME")
 
 
 FRAMES = []
-MAX_FRAMES = 100
+MAX_FRAMES = 1000
+
+def generate_gif(frames, filename="output.gif", duration=100):
+    """
+    Generate an animated GIF from a list of PNG buffers.
+    
+    Args:
+        frames: List of PNG buffers (from cv2.imencode)
+        filename: Output filename for the GIF
+        duration: Duration between frames in milliseconds
+    """
+    if not frames:
+        logging.warning("No frames to generate GIF")
+        return
+    
+    try:
+        # Convert PNG buffers to PIL Images
+        pil_images = []
+        for frame_buffer in frames:
+            # Convert numpy array buffer to bytes
+            frame_bytes = frame_buffer.tobytes()
+            
+            # Create PIL Image from bytes
+            img = Image.open(io.BytesIO(frame_bytes))
+            pil_images.append(img)
+        
+        # Save as animated GIF
+        if pil_images:
+            pil_images[0].save(
+                filename,
+                format='GIF',
+                save_all=True,
+                append_images=pil_images[1:],
+                duration=duration,
+                loop=0  # 0 means infinite loop
+            )
+            logging.info(f"Successfully generated GIF with {len(pil_images)} frames: {filename}")
+        
+    except Exception as e:
+        logging.error(f"Error generating GIF: {e}")
+
 
 async def main(room: rtc.Room):
     logging.basicConfig(level=logging.INFO)
@@ -56,6 +99,9 @@ async def main(room: rtc.Room):
             logger.info('Button pressed: %s', json_data)
             # print(FRAMES[-1])
             summarize_png(FRAMES[-1])
+            
+            # encode into animate gif
+            generate_gif(FRAMES)
 
     # handler for when a track is subscribed
     @room.on("track_subscribed")
@@ -73,8 +119,8 @@ async def main(room: rtc.Room):
             async def process_video_frames():
                 async for event in video_stream:
                     frame = event.frame
-                    # logger.info("Received video frame: %dx%d from %s",
-                    #             frame.width, frame.height, participant.identity)
+                    logger.info("Received video frame: %dx%d from %s",
+                                frame.width, frame.height, participant.identity)
 
                     # Extract frame data and encode to PNG
                     try:
@@ -87,6 +133,9 @@ async def main(room: rtc.Room):
 
                         # Convert RGB to BGR for OpenCV
                         bgr_frame = cv2.cvtColor(frame_array, cv2.COLOR_RGB2BGR)
+                        
+                        # Warp the image by resampling to swap width and height dimensions
+                        bgr_frame = cv2.resize(bgr_frame, (height, width), interpolation=cv2.INTER_LINEAR)
 
                         # Encode as PNG
                         success, png_buffer = cv2.imencode('.png', bgr_frame)
