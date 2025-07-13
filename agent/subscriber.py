@@ -32,7 +32,15 @@ async def main(room: rtc.Room):
     @room.on("data_received")
     def on_data_received(data: rtc.DataPacket):
         logger.info("Received data from %s topic: %s", data.participant.identity, data.topic)
-
+        decoded_data = data.data.decode('utf-8')
+            
+            # Try to parse as JSON
+        json_data = json.loads(decoded_data)
+        
+        if data.topic == "button":
+            logger.info('Button pressed: %s', json_data)
+        
+        
     # handler for when a track is subscribed
     @room.on("track_subscribed")
     def on_track_subscribed(track: rtc.Track, publication: rtc.TrackPublication, participant: rtc.RemoteParticipant):
